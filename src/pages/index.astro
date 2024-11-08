@@ -1,0 +1,192 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FeaturedSection from '../components/FeaturedSection.astro';
+---
+
+<Layout title="Welcome">
+	<main>
+		<section class="hero">
+			<div class="hero-content">
+				<h1>Jamaica <span class="text-gradient">Gardens</span></h1>
+				<p class="tagline">
+					Discover the beauty of Jamaican flora and the art of growing guava
+				</p>
+				<a href="#featured" class="cta-button">Explore More</a>
+			</div>
+		</section>
+
+		<section id="featured" class="featured-sections">
+			<h2>Explore Our Garden</h2>
+			<div class="grid">
+				<FeaturedSection
+					title="Growing Guide"
+					description="Master the art of growing healthy guava trees with our comprehensive guide."
+					image="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2"
+					link="/growing-guide"
+				/>
+				<FeaturedSection
+					title="Health Benefits"
+					description="Discover the amazing health benefits of guava fruit and leaves."
+					image="https://images.unsplash.com/photo-1515590427812-a4fa19bd9b3b"
+					link="/benefits"
+				/>
+				<FeaturedSection
+					title="Recipes"
+					description="Explore traditional Jamaican recipes featuring fresh guava."
+					image="https://images.unsplash.com/photo-1565299999261-28ba859019bb"
+					link="/recipes"
+				/>
+				<FeaturedSection
+					title="Garden Gallery"
+					description="View our collection of beautiful Jamaican gardens and guava plants."
+					image="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae"
+					link="/gallery"
+				/>
+			</div>
+		</section>
+
+		<section class="newsletter">
+			<div class="newsletter-content">
+				<h2>Stay Connected</h2>
+				<p>Subscribe to our newsletter for gardening tips and updates</p>
+				<form class="subscribe-form">
+					<input type="email" placeholder="Enter your email" required>
+					<button type="submit">Subscribe</button>
+				</form>
+			</div>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	.hero {
+		height: 80vh;
+		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+			url('https://images.unsplash.com/photo-1604848698030-c434ba08ece1');
+		background-size: cover;
+		background-position: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: white;
+	}
+
+	.hero-content {
+		max-width: 800px;
+		padding: 2rem;
+	}
+
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+	}
+
+	.tagline {
+		font-size: 1.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.text-gradient {
+		background-image: linear-gradient(45deg, #4CAF50, #81C784);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+
+	.cta-button {
+		display: inline-block;
+		background: rgb(var(--accent));
+		color: white;
+		padding: 1rem 2rem;
+		border-radius: 30px;
+		text-decoration: none;
+		font-weight: 600;
+		transition: transform 0.3s ease;
+	}
+
+	.cta-button:hover {
+		transform: translateY(-2px);
+	}
+
+	.featured-sections {
+		max-width: 1200px;
+		margin: 4rem auto;
+		padding: 0 1rem;
+	}
+
+	.featured-sections h2 {
+		text-align: center;
+		margin-bottom: 3rem;
+		font-size: 2.5rem;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+	}
+
+	.newsletter {
+		background: linear-gradient(rgba(var(--accent-dark), 0.9), rgba(var(--accent-dark), 0.9)),
+			url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae');
+		background-size: cover;
+		background-position: center;
+		padding: 4rem 1rem;
+		text-align: center;
+	}
+
+	.newsletter-content {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.newsletter h2 {
+		margin-bottom: 1rem;
+	}
+
+	.subscribe-form {
+		display: flex;
+		gap: 1rem;
+		margin-top: 2rem;
+	}
+
+	.subscribe-form input {
+		flex: 1;
+		padding: 0.8rem;
+		border: none;
+		border-radius: 4px;
+		font-size: 1rem;
+	}
+
+	.subscribe-form button {
+		background: rgb(var(--accent));
+		color: white;
+		border: none;
+		padding: 0.8rem 2rem;
+		border-radius: 4px;
+		cursor: pointer;
+		font-weight: 600;
+		transition: background-color 0.3s ease;
+	}
+
+	.subscribe-form button:hover {
+		background: rgb(var(--accent-light));
+	}
+
+	@media (max-width: 768px) {
+		h1 {
+			font-size: 3rem;
+		}
+
+		.subscribe-form {
+			flex-direction: column;
+		}
+
+		.subscribe-form button {
+			width: 100%;
+		}
+	}
+</style>
